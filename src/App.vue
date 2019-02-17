@@ -60,8 +60,8 @@ export default {
           
         ],
       signMenuItems: [
-          { icon: 'face', title: 'Sign up', link: '/signup' },
-          { icon: 'lock_open', title: 'Sign in', link: '/signin' }
+          { icon: 'face', title: 'Sign up', link: '/signUp' },
+          { icon: 'lock_open', title: 'Sign in', link: '/signIn' }
       ]
     }
   }
