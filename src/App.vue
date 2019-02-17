@@ -1,37 +1,39 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+    <v-toolbar>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">Jaos</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+          flat
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.link"
+          >
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+    <menu>
+  </menu>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
   data () {
     return {
-      //
+      menuItems: [
+          { icon: 'person', title: 'Sturtup', link: '/profile' },
+          { icon: 'person', title: 'Proyectos Propios', link: '/signup' },
+          { icon: 'person', title: 'Bines Raices', link: '/signin' },
+          { icon: 'person', title: 'Profile', link: '/profile' },
+          { icon: 'face', title: 'Sign up', link: '/signup' },
+          { icon: 'lock_open', title: 'Sign in', link: '/signin' }
+        ]
     }
   }
 }
