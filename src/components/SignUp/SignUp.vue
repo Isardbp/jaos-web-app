@@ -52,9 +52,74 @@
 
                     <v-stepper-content step="2">
                         <v-card
-                        class="mb-5"
-                        height="200px"
-                        ></v-card>
+                        class="mb-3"
+                        height="300px"
+                        >
+                            <v-layout justify-space-around row fill-height>
+                                <v-flex xs5>
+                                    <v-form>
+                                        <v-container grid-list-xl fluid>
+                                            <v-layout wrap>
+                                                <v-flex xs12 sm6 >
+                                                    <v-text-field
+                                                    v-model="name"
+                                                    :counter="15"
+                                                    :rules="nameRules"
+                                                    label="Nombre Usuario"
+                                                    required
+                                                    ></v-text-field>
+                                                </v-flex>
+                                                <v-flex xs12 sm6>
+                                                    <v-text-field
+                                                    v-model="name"
+                                                    :counter="30"
+                                                    :rules="nameRules"
+                                                    label="Nombe"
+                                                    required
+                                                    ></v-text-field>
+                                                </v-flex>
+                                                <v-flex xs12>
+                                                    <v-text-field
+                                                    v-model="name"
+                                                    :counter="50"
+                                                    :rules="nameRules"
+                                                    label="Apellidos"
+                                                    required
+                                                    ></v-text-field>
+                                                </v-flex>
+                                            </v-layout>
+                                        </v-container>
+                                    </v-form>
+                                </v-flex>
+                                <v-divider vertical></v-divider>
+                                <v-flex xs5>
+                                    <v-form>
+                                        <v-container grid-list-xl fluid>
+                                            <v-layout wrap>
+                                                <v-flex xs12>
+                                                    <v-text-field
+                                                    v-model="email"
+                                                    :rules="emailRules"
+                                                    label="E-mail"
+                                                    required
+                                                    ></v-text-field>
+                                                </v-flex>
+                                                <v-flex xs12>
+                                                    <v-text-field
+                                                    v-model="name"
+                                                    :counter="30"
+                                                    :rules="nameRules"
+                                                    label="Móvil"
+                                                    required
+                                                    ></v-text-field>
+                                                </v-flex>
+                                            </v-layout>
+                                        </v-container>
+                                    </v-form>
+                                </v-flex>
+                            </v-layout>
+                        
+                        </v-card>
 
                         <v-btn
                         flat
@@ -99,19 +164,14 @@
   }
   function changeText(value) {
       if(!value.localeCompare('Emprendedor')){
-            console.log(value)
-            console.log('Emprendedor')
             document.getElementById("userType").innerHTML = "Emprendedor"
             document.getElementById("userDescription").innerHTML = "Un Emprendedor puede crear startups, los cuales gracias a nosotros"+
             "pueden evolucionar y bla bla bla bla "
       }
       else if (!value.localeCompare('Inversor')){
-            console.log(value)
-            console.log('Inversor')
             document.getElementById("userType").innerHTML = "Inversor"
             document.getElementById("userDescription").innerHTML = "Un Inversor puede invertir en proyectos, startups... Y mas texto que"+
             "tendremos que pensar"
-
       }
   }
 </script>
