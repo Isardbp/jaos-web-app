@@ -29,6 +29,7 @@
                                     v-on:change="changeText"
                                     outline
                                     color="blue"
+                                    required
                                     >
                                     </v-select>
                                 </v-flex>
@@ -158,7 +159,15 @@
       return {
         changeText,
         e1: 0,
-        userTypeItems: ['Inversor', 'Emprendedor']
+        userTypeItems: ['Inversor', 'Emprendedor'],
+        nameRules: [
+            v => !!v || 'Nombre es campo obligatorio',
+            v => v.length <= 30 || 'El nombre no puede tener mas de 30 caracteres'
+        ],
+        emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+/.test(v) || 'E-mail must be valid'
+      ]
       }
     }
   }
