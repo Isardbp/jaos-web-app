@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-toolbar>
-      <v-toolbar-title>
+      <v-toolbar-title class="hidden-xs-only">
         <router-link to="/" tag="span" style="cursor: pointer">Jaos</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -40,6 +40,28 @@
           </v-list>
         </v-menu>
       </v-toolbar-items>
+      <v-layout class="hidden-sm-and-up" row wrap align-center>
+        <v-btn 
+          icon
+          style="cursor: pointer"
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.link"
+          small
+          >
+            <v-icon dark small>{{ item.icon }}</v-icon>
+        </v-btn>
+        <v-btn 
+          icon
+          style="cursor: pointer"
+          v-for="item in signMenuItems"
+          :key="item.title"
+          :to="item.link"
+          small
+          >
+            <v-icon dark small>{{ item.icon }}</v-icon>
+        </v-btn>
+      </v-layout>
     </v-toolbar>
     <main>
       <router-view></router-view>
