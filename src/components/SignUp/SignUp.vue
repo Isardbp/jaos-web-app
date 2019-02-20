@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout row wrap>
-            <v-flex xs12>
+            <v-flex xs12 mt-5>
                <v-stepper v-model="e1">
                     <v-stepper-header>
                     <v-stepper-step :complete="e1 > 1" step="1" color="blue">Tipo de Usuario</v-stepper-step>
