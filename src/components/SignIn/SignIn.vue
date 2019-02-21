@@ -14,7 +14,7 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn flat color="blue">Registrarse</v-btn>
+                        <v-btn flat color="blue" to='/signUp'>Registrarse</v-btn>
                         <v-btn round color="blue">Login</v-btn>
                     </v-card-actions>
                 </v-card>
